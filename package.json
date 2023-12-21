@@ -2,10 +2,14 @@
   "name": "backendjs",
   "version": "1.0.0",
   "description": "Backend in Node Js",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Anshuman Gaur",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
 }
