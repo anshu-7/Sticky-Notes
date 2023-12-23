@@ -59,7 +59,7 @@ userSchema.pre("save",async function(next){
 
   if(!this.isModified("password") return next()); // if password is not modfied than skip encryption
 
-  this.password = bcrypt.hash(this.password,10)
+  this.password = await bcrypt.hash(this.password,10)
   next();
 
 }) //we are not using arrow function bcz it will not have "this" access
