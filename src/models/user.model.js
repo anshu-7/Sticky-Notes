@@ -57,7 +57,7 @@ const userSchema = new Schema(
 //this mongoDB hook is used to modify field just before saving , specifically, this function is used to encrypt the password
 userSchema.pre("save",async function(next){
 
-  if(!this.isModified("password") return next()); // if password is not modfied than skip encryption
+  if(!this.isModified("password")) next(); // if password is not modfied than skip encryption
 
   this.password = await bcrypt.hash(this.password,10)
   next();
